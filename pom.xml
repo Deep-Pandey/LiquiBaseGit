@@ -92,9 +92,9 @@
 			    <version>${jacoco.version}</version>
 			    <configuration>
 			<!--         <skip>${maven.test.skip}</skip> -->
-			        <destFile>${basedir}/target/jacoco.exec</destFile>
-			        <dataFile>${basedir}/target/jacoco.exec</dataFile>
-			        <output>file</output>
+			        <destFile>${basedir}/target/jacoco.xml</destFile>
+			        <dataFile>${basedir}/target/jacoco.xml</dataFile>
+			        <output>xml</output>
 			        <append>true</append>
 			       
 			    </configuration>
