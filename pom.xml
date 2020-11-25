@@ -90,14 +90,14 @@
 			    <groupId>org.jacoco</groupId>
 			    <artifactId>jacoco-maven-plugin</artifactId>
 			    <version>${jacoco.version}</version>
-			    <configuration>
+<!-- 			    <configuration>
 			        <skip>${maven.test.skip}</skip>
 			        <destFile>${basedir}/target/jacoco.exec</destFile>
 			        <dataFile>${basedir}/target/jacoco.exec</dataFile>
 			        <output>file</output>
 			        <append>true</append>
 			       
-			    </configuration>
+			    </configuration> -->
 			    <executions>
 			    <execution>
             <id>pre-integration-test</id>
