@@ -91,12 +91,14 @@
 			    <artifactId>jacoco-maven-plugin</artifactId>
 			    <version>${jacoco.version}</version>
 			    <configuration>
-			<!--         <skip>${maven.test.skip}</skip> -->
-			        <destFile>${basedir}/target/jacoco.xml</destFile>
-			        <dataFile>${basedir}/target/jacoco.xml</dataFile>
-			        <output>xml</output>
+			        <skip>${maven.test.skip}</skip>
+			        <destFile>${basedir}/target/jacoco.exec</destFile>
+			        <dataFile>${basedir}/target/jacoco.exec</dataFile>
+			        <output>file</output>
 			        <append>true</append>
-			       
+			        <excludes>
+			            <exclude>*MethodAccess</exclude>
+			        </excludes>
 			    </configuration>
 			    <executions>
 			        <execution>
@@ -108,7 +110,7 @@
 			        </execution>
 			        <execution>
 			            <id>jacoco-site</id>
-			            <phase>package</phase>
+			            <phase>verify</phase>
 			            <goals>
 			                <goal>report</goal>
 			            </goals>
