@@ -3,6 +3,9 @@ package com.javadeveloperzone.liquibase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -24,5 +27,22 @@ public class LiquibaseApplicationTest {
 	      Assert.assertEquals(11, sum);
 	   }
 	
+	   @Test
+	   public void firstSearchResultIsRelatedTest() {
+	       
+	       System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");    // <-- Change this path
+	       WebDriver driver = new ChromeDriver();
+	       String baseUrl = "https://experitest.com/free-trial/";
+	       String expectedTitle = "experitest.com";
+	       String actualTitle = "";
+	       driver.get(baseUrl);
+	       actualTitle = driver.getTitle();
+	       System.out.println("actualTitle : "+actualTitle);
+	       // Check that the page title contains the term "Software Testing"
+	       Assert.assertTrue(actualTitle.contains(expectedTitle));    
+
+	       // Close the browser
+	       driver.quit();    
+	   }
 	
 }
