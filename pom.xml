@@ -110,6 +110,14 @@
             <artifactId>bootstrap</artifactId>
             <version>3.3.7</version>
         </dependency>
+        <!-- Instruct spring boot not to use the inbuilt Tomcat server -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+
 
     </dependencies>
 
